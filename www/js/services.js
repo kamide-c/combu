@@ -20,12 +20,12 @@ angular.module('starter.services', [])
   };
 })
 
-.filter('milesimal', function() {
+.filter('centesimal', function() {
   return function(input, min, max) {
     min = parseInt(min);
     max = parseInt(max);
-    for (var i=min; i<=max; i+=0.001)
-      input.push(i.toFixed(3));
+    for (var i=min; i<=max; i+=0.01)
+      input.push(i.toFixed(2));
     return input;
   };
  }) 

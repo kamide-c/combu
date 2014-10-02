@@ -40,22 +40,22 @@
 
         <label class="item item-input item-select">
           <div class="input-label">
-            <h1>R$ {{ dados.precoGas | number:3 }}</h1>
+            <h1>R$ {{ dados.precoGas | number:2 }}</h1>
             <p>
               <i class="icon ion-waterdrop placeholder-icon"></i>gasolina
             </p>
           </div>
-          <select ng-model="dados.precoGas" ng-options="n for n in [] | milesimal:1:5"></select>
+          <select ng-model="dados.precoGas" ng-options="n for n in [] | centesimal:1:4"></select>
         </label>
 
         <label class="item item-input item-select">
           <div class="input-label">
-            <h1>R$ {{ dados.precoEt | number:3 }}</h1>
+            <h1>R$ {{ dados.precoEt | number:2 }}</h1>
             <p>
               <i class="icon ion-leaf placeholder-icon"></i>etanol
             </p>
           </div>
-          <select ng-model="dados.precoEt" ng-options="n for n in [] | milesimal:1:5"></select>
+          <select ng-model="dados.precoEt" ng-options="n for n in [] | centesimal:1:4"></select>
         </label>
 
    		<div class="item item-input-wrapper item-text-wrap">
