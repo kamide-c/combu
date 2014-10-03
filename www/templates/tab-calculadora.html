@@ -1,6 +1,6 @@
 <ion-view title="FlexMath">
     <ion-nav-buttons side="right">
-          <a class="button button-icon icon ion-ios7-plus-empty" ng-click="open()"></a>
+          <a class="button button-icon icon ion-ios7-plus-empty" ng-click="open(0)"></a>
       </ion-nav-buttons>
 
   <ion-content class="has-header">
@@ -10,25 +10,25 @@
           Dados de consumo
         </div>
 
-        <label class="item item-input item-select">
-          <div class="input-label">
-            <h1>{{ dados.atnGas | number:1 }} km/l</h1>
-            <p>
-              <i class="icon ion-waterdrop placeholder-icon"></i>gasolina
-            </p>
-          </div>
-          <select ng-model="dados.atnGas" ng-options="n for n in [] | decimal:1:50"></select>
-        </label>
+        <a class="item" ng-click="open(1)">
+          <h1>{{ dados.atnGas | number:1 }}</h1>
+          <span class="item-note">
+            km/L
+          </span>
+          <p>
+            <i class="icon ion-leaf placeholder-icon"></i>gasolina
+          </p>
+        </a>
 
-        <label class="item item-input item-select">
-          <div class="input-label">
-            <h1>{{ dados.atnEt | number:1 }} km/l</h1>
-            <p>
-              <i class="icon ion-leaf placeholder-icon"></i>etanol
-            </p>
-          </div>
-          <select ng-model="dados.atnEt" ng-options="n for n in [] | decimal:1:50"></select>
-        </label>
+        <a class="item" ng-click="open(2)">
+          <h1>{{ dados.atnEt | number:1 }}</h1>
+          <span class="item-note">
+            km/L
+          </span>
+          <p>
+            <i class="icon ion-leaf placeholder-icon"></i>etanol
+          </p>
+        </a>
 
      		<div class="item item-input-wrapper item-text-wrap">
      			Nos campos acima você deve entrar com os dados da autonomia do seu automóvel. A autonomia é a relação entre a distância percorrida pelo automóvel por litro de combustível. Esta informação pode ser obtida através do manual do proprietário do automóvel.
@@ -38,25 +38,25 @@
           Preço
         </div>
 
-        <label class="item item-input item-select">
-          <div class="input-label">
-            <h1>R$ {{ dados.precoGas | number:2 }}</h1>
-            <p>
-              <i class="icon ion-waterdrop placeholder-icon"></i>gasolina
-            </p>
-          </div>
-          <select ng-model="dados.precoGas" ng-options="n for n in [] | centesimal:1:4"></select>
-        </label>
+        <a class="item" ng-click="open(3)">
+          <h1>{{ dados.precoGas | number:2 }}</h1>
+          <span class="item-note">
+            R$
+          </span>
+          <p>
+            <i class="icon ion-waterdrop placeholder-icon"></i>gasolina
+          </p>
+        </a>
 
-        <label class="item item-input item-select">
-          <div class="input-label">
-            <h1>R$ {{ dados.precoEt | number:2 }}</h1>
-            <p>
-              <i class="icon ion-leaf placeholder-icon"></i>etanol
-            </p>
-          </div>
-          <select ng-model="dados.precoEt" ng-options="n for n in [] | centesimal:1:4"></select>
-        </label>
+        <a class="item" ng-click="open(4)">
+          <h1>{{ dados.precoEt | number:2 }}</h1>
+          <span class="item-note">
+            R$
+          </span>
+          <p>
+            <i class="icon ion-leaf placeholder-icon"></i>etanol
+          </p>
+        </a>
 
    		<div class="item item-input-wrapper item-text-wrap">
          Nestes campos você deve informar o valor dos respectivos combustíveis. Após informar todos os dados selecione o botão abaixo para que o FlexMath calcule qual das opções possui o melhor custo-benefício.

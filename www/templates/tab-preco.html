@@ -1,0 +1,17 @@
+<div class="modal">
+  <ion-header-bar class="bar bar-header bar-light nav-title-slide-ios7">
+    <button class="button button-clear" ng-click="close(1)">Voltar</button>
+    <h1 class="title">total a ser pago</h1>
+  </ion-header-bar>
+  <ion-content class="has-header">
+    <ion-list>
+
+        <ion-item ng-repeat="item in itemsPagar" item="item" ng-click="setPagar($index)">
+          {{ item.pagar | number:2 }}
+        </ion-item>
+
+      </ion-list>
+
+      <ion-infinite-scroll ng-if="!noMoreItemsAvailablePagar" on-infinite="loadMore(4)" distance="10%"></ion-infinite-scroll>
+  </ion-content>
+</div>

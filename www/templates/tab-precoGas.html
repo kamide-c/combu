@@ -1,0 +1,17 @@
+<div class="modal">
+  <ion-header-bar class="bar bar-header bar-light nav-title-slide-ios7">
+    <button class="button button-clear" ng-click="close(0)">Voltar</button>
+    <h1 class="title">preço da gasolina</h1>
+  </ion-header-bar>
+  <ion-content class="has-header">
+    <ion-list>
+
+        <ion-item ng-repeat="item in itemsPreco" item="item" ng-click="setPrecoGas($index)">
+          {{ item.prc/100 | number:2 }}
+        </ion-item>
+
+      </ion-list>
+
+      <ion-infinite-scroll ng-if="!noMoreItemsAvailablePreco" on-infinite="loadMore(2)" distance="10%"></ion-infinite-scroll>
+  </ion-content>
+</div>
