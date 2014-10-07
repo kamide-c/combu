@@ -4,6 +4,18 @@
 	text-align: center;
 }
 
-br {
-    line-height:100%;
+.linha1 {
+    line-height:50%;
+}  
+
+.linha2 {
+    line-height:75%;
 } 
+
+.linha3 {
+    line-height:74%;
+} 
+
+select {
+	visibility: hidden;
+}

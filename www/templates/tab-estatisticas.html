@@ -14,39 +14,36 @@
   <ion-content class="has-header has-subheader">
     <div class="list">
       <form>
-        <a class="item" ng-click="open(5)">
-          <h1>{{ calculo.tanque | number:0 }}</h1>
-          <span class="item-note">
-            Litros
-          </span>
-          <p>
-            Volume no tanque de combustível
-          </p>
-        </a>
+        <label class="item item-input item-select">
+          <div class="input-label">
+            <h1>{{ calculo.tanque | number:0 }} L</h1>
+            <p>
+              Volume no tanque de combustível
+            </p>
+          </div>
+          <select ng-model="calculo.tanque" ng-options="n for n in [] | tanque:1:100"></select>
+        </label>
 
         <div class="item item-input-wrapper item-text-wrap">
           Informando o volume do tanque de combustível, o FlexMath calcula para você a estimativa de quantos quilômetros seu veículo poderá percorrer e o total do valor a ser pago pelo combustível.
         </div>
 
-        <a class="item" ng-click="open(6)">
-          <h1>{{ calculo.kmt | number:0 }}</h1>
-          <span class="item-note">
-            km
-          </span>
+        <a class="item" ng-click="open(5)">
+          <h1>{{ calculo.kmt | number:0 }} km</h1>
           <p>
             Percurso estimado
           </p>
         </a>
 
-        <a class="item" ng-click="open(7)">
-          <h1>{{ calculo.preco | number:2 }}</h1>
-          <span class="item-note">
-            R$
-          </span>
-          <p>
-            Total a ser pago
-          </p>
-        </a>
+        <label class="item item-input item-select">
+          <div class="input-label">
+            <h1>R$ {{ calculo.preco | number:2 }}</h1>
+            <p>
+              Total a ser pago
+            </p>
+          </div>
+          <select ng-model="calculo.preco" ng-options="n for n in [] | preco:5:200"></select>
+        </label>
 
       <div class="item item-input-wrapper item-text-wrap">
         Se desejar, você pode informar o total a ser pago pelo combustível que o FlexMath se encarrega-rá de calcular a estimativa de quantos quilômetros seu veículo poderá percorrer e quantos litros de combustível será adicionado ao tanque de combustível do veículo. Você também pode informar a distância do percurso que o FlexMath calcula para você quantos litros de combustível serão necessários e o total do valor a ser pago.

@@ -11,17 +11,17 @@
         </div>
 
         <a class="item" ng-click="open(1)">
-          <h1>{{ dados.atnGas | number:1 }}</h1>
+          <h1>{{ resultado.atnGas | number:1 }}</h1>
           <span class="item-note">
             km/L
           </span>
           <p>
-            <i class="icon ion-leaf placeholder-icon"></i>gasolina
+            <i class="icon ion-waterdrop placeholder-icon"></i>gasolina
           </p>
         </a>
 
         <a class="item" ng-click="open(2)">
-          <h1>{{ dados.atnEt | number:1 }}</h1>
+          <h1>{{ resultado.atnEt | number:1 }}</h1>
           <span class="item-note">
             km/L
           </span>
@@ -39,7 +39,7 @@
         </div>
 
         <a class="item" ng-click="open(3)">
-          <h1>{{ dados.precoGas | number:2 }}</h1>
+          <h1>{{ resultado.precoGas | number:3 }}</h1>
           <span class="item-note">
             R$
           </span>
@@ -49,7 +49,7 @@
         </a>
 
         <a class="item" ng-click="open(4)">
-          <h1>{{ dados.precoEt | number:2 }}</h1>
+          <h1>{{ resultado.precoEt | number:3 }}</h1>
           <span class="item-note">
             R$
           </span>

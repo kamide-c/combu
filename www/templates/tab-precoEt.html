@@ -4,14 +4,33 @@
     <h1 class="title">preço do etanol</h1>
   </ion-header-bar>
   <ion-content class="has-header">
-    <ion-list>
-
-        <ion-item ng-repeat="item in itemsPreco" item="item" ng-click="setPrecoEt($index)">
-          {{ item.prc/100 | number:2 }}
-        </ion-item>
-
-      </ion-list>
-
-      <ion-infinite-scroll ng-if="!noMoreItemsAvailablePreco" on-infinite="loadMore(2)" distance="10%"></ion-infinite-scroll>
+    <div class="row textoModal">
+      <div class="col">
+        <button class="button button-clear button-stable icon ion-arrow-up-b" ng-click="addPrecoEt(1)"></button><br class="linha3">
+        {{ dados.precoEt | number:0 }}<br class="linha1">
+        <button class="button button-clear button-stable icon ion-arrow-down-b" ng-click="addPrecoEt(0)"></button>
+      </div>
+      <div class="col">
+        <br class="linha2">.
+      </div>
+      <div class="col">
+        <button class="button button-clear button-stable icon ion-arrow-up-b" ng-click="addPrecoEt(3)"></button><br class="linha3">
+        {{ decimo.precoEt | number:0 }}<br class="linha1">
+        <button class="button button-clear button-stable icon ion-arrow-down-b" ng-click="addPrecoEt(2)"></button>
+      </div>
+      <div class="col">
+        <button class="button button-clear button-stable icon ion-arrow-up-b" ng-click="addPrecoEt(5)"></button><br class="linha3">
+        {{ centesimo.precoEt | number:0 }}<br class="linha1">
+        <button class="button button-clear button-stable icon ion-arrow-down-b" ng-click="addPrecoEt(4)"></button>
+      </div>
+      <div class="col">
+        <button class="button button-clear button-stable icon ion-arrow-up-b" ng-click="addPrecoEt(7)"></button><br class="linha3">
+        {{ milesimo.precoEt | number:0 }}<br class="linha1">
+        <button class="button button-clear button-stable icon ion-arrow-down-b" ng-click="addPrecoEt(6)"></button>
+      </div>
+    </div>
+    <div class="padding">
+      <button class="button button-block button-calm" ng-click="close(0)">OK</button>
+    </div>
   </ion-content>
 </div>

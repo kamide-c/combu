@@ -8,14 +8,170 @@ angular.module('starter.controllers', [])
     atnEt: 0
   }
 
+  $scope.decimo = {
+    precoGas: 0,
+    precoEt: 0,
+    atnGas: 0,
+    atnEt: 0
+  }
+
+  $scope.centesimo = {
+    precoGas: 0,
+    precoEt: 0
+  }
+
+  $scope.milesimo = {
+    precoGas: 0,
+    precoEt: 0
+  }
+
+  $scope.resultado = {
+    precoGas: 0,
+    precoEt: 0,
+    atnGas: 0,
+    atnEt: 0
+  }
+
+  $scope.addGas = function(i){
+    if (i == 0){
+      while ($scope.dados.atnGas > 0){
+       return $scope.dados.atnGas--;
+      }
+    }
+    if (i == 1){
+      while ($scope.dados.atnGas < 99){
+       return $scope.dados.atnGas++;
+      }
+    }
+    if (i == 2){
+      while ($scope.decimo.atnGas > 0){
+       return $scope.decimo.atnGas--;
+      }
+    }
+    if (i == 3){
+      while ($scope.decimo.atnGas < 9){
+       return $scope.decimo.atnGas++;
+      }
+    }
+  }
+
+  $scope.addEt = function(i){
+    if (i == 0){
+      while ($scope.dados.atnEt > 0){
+       return $scope.dados.atnEt--;
+      }
+    }
+    if (i == 1){
+      while ($scope.dados.atnEt < 99){
+       return $scope.dados.atnEt++;
+      }
+    }
+    if (i == 2){
+      while ($scope.decimo.atnEt > 0){
+       return $scope.decimo.atnEt--;
+      }
+    }
+    if (i == 3){
+      while ($scope.decimo.atnEt < 9){
+       return $scope.decimo.atnEt++;
+      }
+    }
+  }
+
+  $scope.addPrecoGas = function(i){
+    if (i == 0){
+      while ($scope.dados.precoGas > 0){
+       return $scope.dados.precoGas--;
+      }
+    }
+    if (i == 1){
+      while ($scope.dados.precoGas < 9){
+       return $scope.dados.precoGas++;
+      }
+    }
+    if (i == 2){
+      while ($scope.decimo.precoGas > 0){
+       return $scope.decimo.precoGas--;
+      }
+    }
+    if (i == 3){
+      while ($scope.decimo.precoGas < 9){
+       return $scope.decimo.precoGas++;
+      }
+    }
+    if (i == 4){
+      while ($scope.centesimo.precoGas > 0){
+       return $scope.centesimo.precoGas--;
+      }
+    }
+    if (i == 5){
+      while ($scope.centesimo.precoGas < 9){
+       return $scope.centesimo.precoGas++;
+      }
+    }
+    if (i == 6){
+      while ($scope.milesimo.precoGas > 0){
+       return $scope.milesimo.precoGas--;
+      }
+    }
+    if (i == 7){
+      while ($scope.milesimo.precoGas < 9){
+       return $scope.milesimo.precoGas++;
+      }
+    }
+  }
+
+  $scope.addPrecoEt = function(i){
+    if (i == 0){
+      while ($scope.dados.precoEt > 0){
+       return $scope.dados.precoEt--;
+      }
+    }
+    if (i == 1){
+      while ($scope.dados.precoEt < 9){
+       return $scope.dados.precoEt++;
+      }
+    }
+    if (i == 2){
+      while ($scope.decimo.precoEt > 0){
+       return $scope.decimo.precoEt--;
+      }
+    }
+    if (i == 3){
+      while ($scope.decimo.precoEt < 9){
+       return $scope.decimo.precoEt++;
+      }
+    }
+    if (i == 4){
+      while ($scope.centesimo.precoEt > 0){
+       return $scope.centesimo.precoEt--;
+      }
+    }
+    if (i == 5){
+      while ($scope.centesimo.precoEt < 9){
+       return $scope.centesimo.precoEt++;
+      }
+    }
+    if (i == 6){
+      while ($scope.milesimo.precoEt > 0){
+       return $scope.milesimo.precoEt--;
+      }
+    }
+    if (i == 7){
+      while ($scope.milesimo.precoEt < 9){
+       return $scope.milesimo.precoEt++;
+      }
+    }
+  }
+
   $scope.resposta = function() { 
-    if ($scope.dados.precoGas/$scope.dados.atnGas > $scope.dados.precoEt/$scope.dados.atnEt){
+    if ($scope.resultado.precoGas/$scope.resultado.atnGas > $scope.resultado.precoEt/$scope.resultado.atnEt){
       return "Etanol";
     }
-    if ($scope.dados.precoGas/$scope.dados.atnGas < $scope.dados.precoEt/$scope.dados.atnEt){
+    if ($scope.resultado.precoGas/$scope.resultado.atnGas < $scope.resultado.precoEt/$scope.resultado.atnEt){
       return "Gasolina";
     }
-    if ($scope.dados.precoGas/$scope.dados.atnGas == $scope.dados.precoEt/$scope.dados.atnEt){
+    if ($scope.resultado.precoGas/$scope.resultado.atnGas == $scope.resultado.precoEt/$scope.resultado.atnEt){
       return "Ambos";
     }
   }
@@ -50,52 +206,33 @@ angular.module('starter.controllers', [])
     });
 
     $ionicModal.fromTemplateUrl('templates/tab-atnGas.html', {
-      scope: $scope,
-      animation: 'slide-in-right'
+      scope: $scope
     }).then(function(modal) {
       $scope.modal1 = modal;
     });
 
     $ionicModal.fromTemplateUrl('templates/tab-atnEt.html', {
-      scope: $scope,
-      animation: 'slide-in-right'
+      scope: $scope
     }).then(function(modal) {
       $scope.modal2 = modal;
     });
 
     $ionicModal.fromTemplateUrl('templates/tab-precoGas.html', {
-      scope: $scope,
-      animation: 'slide-in-right'
+      scope: $scope
     }).then(function(modal) {
       $scope.modal3 = modal;
     });
 
     $ionicModal.fromTemplateUrl('templates/tab-precoEt.html', {
-      scope: $scope,
-      animation: 'slide-in-right'
+      scope: $scope
     }).then(function(modal) {
       $scope.modal4 = modal;
     });
 
-    $ionicModal.fromTemplateUrl('templates/tab-tanque.html', {
-      scope: $scope,
-      animation: 'slide-in-right'
+    $ionicModal.fromTemplateUrl('templates/tab-percurso.html', {
+      scope: $scope
     }).then(function(modal) {
       $scope.modal5 = modal;
-    });
-
-    $ionicModal.fromTemplateUrl('templates/tab-percurso.html', {
-      scope: $scope,
-      animation: 'slide-in-right'
-    }).then(function(modal) {
-      $scope.modal6 = modal;
-    });
-
-    $ionicModal.fromTemplateUrl('templates/tab-preco.html', {
-      scope: $scope,
-      animation: 'slide-in-right'
-    }).then(function(modal) {
-      $scope.modal7 = modal;
     });
 
   $scope.close = function(a) {
@@ -105,11 +242,15 @@ angular.module('starter.controllers', [])
       $scope.modal2.hide();
       $scope.modal3.hide();
       $scope.modal4.hide();
+      $scope.resultado.atnGas = $scope.dados.atnGas + $scope.decimo.atnGas/10;
+      $scope.resultado.atnEt = $scope.dados.atnEt + $scope.decimo.atnEt/10;
+      $scope.resultado.precoGas = $scope.dados.precoGas + $scope.decimo.precoGas/10  + $scope.centesimo.precoGas/100 + $scope.milesimo.precoGas/1000;
+      $scope.resultado.precoEt = $scope.dados.precoEt + $scope.decimo.precoEt/10  + $scope.centesimo.precoEt/100 + $scope.milesimo.precoEt/1000;
     }
     if (a == 1){
       $scope.modal5.hide();
-      $scope.modal6.hide();
-      $scope.modal7.hide();
+      $scope.calculo.kmt = $scope.calculo.kmts;
+      $scope.calculo.kmts = '';
     }
   };
 
@@ -133,13 +274,6 @@ angular.module('starter.controllers', [])
     if (n == 5){
       $scope.modal5.show();
     }
-    if (n == 6){
-      $scope.modal6.show();
-    }
-    if (n == 7){
-      $scope.modal7.show();
-    }
-
   };
 
   $scope.doOpen = function() {
@@ -154,6 +288,7 @@ angular.module('starter.controllers', [])
   $scope.calculo = {
     tanque: 0,
     kmt: 0,
+    kmts: "",
     preco: 0,
     combustivel: "",
     autonomia: ""
@@ -190,82 +325,6 @@ angular.module('starter.controllers', [])
       $scope.calculo.kmt = ($scope.calculo.preco * newValue.autonomia) / newValue.combustivel;
     }
   }, true);
-
-  $scope.noMoreItemsAvailable = false;
-  
-  $scope.loadMore = function(f) {
-    if (f == 1){
-      $scope.itemsConsumo.push({ com: $scope.itemsConsumo.length});
-
-      if ( $scope.itemsConsumo.length == 51 ) {
-        $scope.noMoreItemsAvailableConsumo = true;
-      }
-    }
-    if (f == 2){
-      $scope.itemsPreco.push({ prc: $scope.itemsPreco.length});
-
-      if ( $scope.itemsPreco.length == 501 ) {
-        $scope.noMoreItemsAvailablePreco = true;
-      }
-    }
-    if (f == 3){
-      $scope.itemsTanque.push({ tq: $scope.itemsTanque.length});
-
-      if ( $scope.itemsTanque.length == 101 ) {
-        $scope.noMoreItemsAvailableTanque = true;
-      }
-    }
-    if (f == 4){
-      $scope.itemsPagar.push({ pagar: $scope.itemsPagar.length});
-
-      if ( $scope.itemsPagar.length == 201 ) {
-        $scope.noMoreItemsAvailablePagar = true;
-      }
-    } 
-    if (f == 5){
-      $scope.itemsDist.push({ s: $scope.itemsDist.length});
-
-      if ( $scope.itemsDist.length == 1001 ) {
-        $scope.noMoreItemsAvailableDist = true;
-      }
-    } 
-    $scope.$broadcast('scroll.infiniteScrollComplete');
-  };
-  
-  $scope.itemsConsumo = [];
-  $scope.itemsPreco = [];
-  $scope.itemsTanque = [];
-  $scope.itemsPagar = [];
-  $scope.itemsDist = [];
-
-  $scope.setAtnGas = function(idx){
-      $scope.dados.atnGas = idx;
-      $scope.close(0)
-  }
-  $scope.setAtnEt = function(idx){
-      $scope.dados.atnEt = idx;
-      $scope.close(0)
-  }
-  $scope.setPrecoGas = function(idx){
-      $scope.dados.precoGas = idx/100;
-      $scope.close(0)
-  }
-  $scope.setPrecoEt = function(idx){
-      $scope.dados.precoEt = idx/100;
-      $scope.close(0)
-  }
-  $scope.setTanque = function(idx){
-      $scope.calculo.tanque = idx;
-      $scope.close(1)
-  }
-  $scope.setPagar = function(idx){
-      $scope.calculo.preco = idx;
-      $scope.close(1)
-  }
-  $scope.setDistancia = function(idx){
-      $scope.calculo.kmt = idx * 10;
-      $scope.close(1)
-  }
 })
 
 .controller('AlertCtrl', function($scope, $rootScope) {
